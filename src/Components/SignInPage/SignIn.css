@@ -1,0 +1,9 @@
+.form-control{
+    height: 60px !important;
+    border-radius: 0px !important;
+    border: 1px solid #80B501 !important;
+    padding-left: 15px !important ;
+}
+.form-check:checked{
+    background: #80B501 !important;
+}

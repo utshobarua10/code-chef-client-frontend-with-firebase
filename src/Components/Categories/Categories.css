@@ -1,0 +1,9 @@
+.card-body{
+    padding: 0px !important;
+}
+.fornt-card{
+    background-image: url('../../Images/chef-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}

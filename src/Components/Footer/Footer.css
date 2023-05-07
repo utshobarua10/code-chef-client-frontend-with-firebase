@@ -1,0 +1,15 @@
+.footer-body{
+    background-color: #071C1F;
+    max-width: 100%;
+    height: 400px;
+}
+.col{
+    margin-right:auto !important;
+}
+.col li{
+    list-style: none;
+    margin-top: 10px;
+}
+.col img{
+    width: 50px;
+}

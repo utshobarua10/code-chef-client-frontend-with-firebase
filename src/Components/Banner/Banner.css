@@ -1,0 +1,25 @@
+.carousel-caption{
+    color: white !important;
+    position: absolute;
+    transform: translateY(-50%);
+    left: 60% !important;
+    top: 65%;
+}
+.carousel-caption h5{
+    font-size: 3rem;
+    font-weight: bolder;
+}
+.carousel-item img{
+    height: 700px;
+}
+.main-button{
+    height: 60px;
+    width: 150px;
+    background-color: #80B501;
+    color:  white;
+    font-size: large;
+    text-align: center;
+    border: none;
+    margin-top: 10px;
+    
+}
