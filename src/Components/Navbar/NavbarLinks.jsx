@@ -23,8 +23,8 @@ const NavbarLinks = () => {
        
           <Nav className="mx-auto">
           
-            <Nav.Link href="#home" className='text-white'>Home</Nav.Link>
-            <Nav.Link href="#link" className='text-white'>blog</Nav.Link>
+            <Nav.Link href="#home" className='text-white'><Link to='/'>Home</Link></Nav.Link>
+            <Nav.Link href="#link" className='text-white'><Link to='/blog'>Blog</Link></Nav.Link>
             <Nav.Link href="#link" className='text-white'><Link to='/signin'>Sign In </Link></Nav.Link>
             <Nav.Link href="#link" className='text-white'><Link to='/signup'>Create Account </Link></Nav.Link>
             <Nav.Link href="#link" className='text-white'><Link to='/contact'>Contact Us </Link></Nav.Link>

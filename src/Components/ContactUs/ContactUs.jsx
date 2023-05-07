@@ -10,12 +10,15 @@ import { BsEnvelopeCheck } from 'react-icons/bs';
 
 const ContactUs = () => {
     return (
-        <div>
-            <Container style={{ marginTop: '150px' }} className='d-flex justify-content-between mb-5'>
+        <div style={{ marginTop: '150px' }} >  
+        <h3 className='text-center'>Contact Us</h3>
+            <Container className='d-flex justify-content-between mb-5'>
+            
                 <Card style={{ width: '18rem' }} className='p-3'>
+               
                     <Card.Img variant="top" src={email} className='mx-auto' style={{height:'100px', width:'100px'}} />
                     
-
+                    
                     <Card.Body className='mt-3 text-center'>
                         <Card.Title>Email Address</Card.Title>
                         <Card.Text>

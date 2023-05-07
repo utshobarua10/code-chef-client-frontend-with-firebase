@@ -7,6 +7,7 @@ import Signup from "../Components/SignUp/Signup";
 import ContactUs from "../Components/ContactUs/ContactUs";
 import Shared from "../Components/Shared/Shared";
 import ChefRecipe from "../Components/ChefRecipe/ChefRecipe";
+import Blog from "../Components/Blog/Blog";
 
 
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         {
             path: '/chefRecipe',
             element: <ChefRecipe></ChefRecipe>
+        },
+        {
+            path: '/blog',
+            element: <Blog></Blog>
         }
     ]
         

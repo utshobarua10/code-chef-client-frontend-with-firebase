@@ -10,6 +10,7 @@ import { AiOutlineLike } from "react-icons/ai";
 const Categories = () => {
     return (
         <div className='mt-5 mb-5'>
+            <h3 className='text-center mb-3'>Check The Chef's</h3>
            <Container className='sm: d-flex'>
            
            <Card style={{ width: '25rem', marginRight:'10px' }} className='fornt-card'>
