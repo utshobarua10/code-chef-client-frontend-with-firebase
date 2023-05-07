@@ -20,7 +20,7 @@ const Categories = () => {
                         <p className='text-light'>10 recipes</p>
                         <p>5 <AiOutlineLike></AiOutlineLike></p>
                     </Card.Subtitle>
-                    <Link style={{textDecoration:'none', color:'#80B501' }}>View Recipe</Link>
+                    <Link to='/chefRecipe' style={{textDecoration:'none', color:'#80B501' }}>View Recipe</Link>
                     </Card.Title>
                     <Card.Img src={chef} className='w-50'></Card.Img>
                     
@@ -35,7 +35,7 @@ const Categories = () => {
                         <p className='text-light'>10 recipes</p>
                         <p>5 <AiOutlineLike></AiOutlineLike></p>
                     </Card.Subtitle>
-                    <Link style={{textDecoration:'none', color:'#80B501' }}>View Recipe</Link>
+                    <Link to='/chefRecipe' style={{textDecoration:'none', color:'#80B501' }}>View Recipe</Link>
                     </Card.Title>
                     <Card.Img src={chef} className='w-50'></Card.Img>
                     
@@ -54,7 +54,7 @@ const Categories = () => {
                         <p className='text-light'>10 recipes</p>
                         <p>5 <AiOutlineLike></AiOutlineLike></p>
                     </Card.Subtitle>
-                    <Link style={{textDecoration:'none', color:'#80B501' }}>View Recipe</Link>
+                    <Link to='/chefRecipe' style={{textDecoration:'none', color:'#80B501' }}>View Recipe</Link>
                     </Card.Title>
                     <Card.Img src={chef} className='w-50'></Card.Img>
                     

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const SignIn = () => {
     return (
         <div className='mt-5'>
-            <Container>
+            <Container style={{marginTop:'150px', marginBottom:'150px'}}>
                 <div className="text-center mb-5">
                     <h3 style={{fontWeight: 'bold'}} >Sign In <br /> to Your Account</h3>
                 </div>

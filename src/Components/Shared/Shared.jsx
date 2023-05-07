@@ -9,7 +9,8 @@ const Shared = () => {
         <div>
            
            <NavbarLinks></NavbarLinks>
-           <Outlet></Outlet>    
+           <Outlet></Outlet>
+           <Footer></Footer>
             
         </div>
     );

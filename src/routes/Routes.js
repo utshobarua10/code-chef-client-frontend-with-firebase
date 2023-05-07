@@ -6,6 +6,7 @@ import NavbarLinks from "../Components/Navbar/NavbarLinks";
 import Signup from "../Components/SignUp/Signup";
 import ContactUs from "../Components/ContactUs/ContactUs";
 import Shared from "../Components/Shared/Shared";
+import ChefRecipe from "../Components/ChefRecipe/ChefRecipe";
 
 
 
@@ -21,18 +22,23 @@ const router = createBrowserRouter([
         {
             path: '/contact',
             element: <ContactUs></ContactUs>
+        },
+        {
+            path: '/signin',
+            element: <SignIn></SignIn>
+        },
+        {
+            path: '/signup',
+            element: <Signup></Signup>
+        },
+        {
+            path: '/chefRecipe',
+            element: <ChefRecipe></ChefRecipe>
         }
     ]
         
     },
-    {
-        path: '/signin',
-        element: <SignIn></SignIn>
-    },
-    {
-        path: '/signup',
-        element: <Signup></Signup>
-    },
+    
   
 
    

@@ -11,7 +11,7 @@ import { BsEnvelopeCheck } from 'react-icons/bs';
 const ContactUs = () => {
     return (
         <div>
-            <Container style={{ marginTop: '150px' }} className='d-flex justify-content-between'>
+            <Container style={{ marginTop: '150px' }} className='d-flex justify-content-between mb-5'>
                 <Card style={{ width: '18rem' }} className='p-3'>
                     <Card.Img variant="top" src={email} className='mx-auto' style={{height:'100px', width:'100px'}} />
                     
@@ -32,11 +32,10 @@ const ContactUs = () => {
                     
 
                     <Card.Body className='mt-3 text-center'>
-                        <Card.Title>Email Address</Card.Title>
+                        <Card.Title> Phone Number</Card.Title>
                         <Card.Text>
-                        info@webmail.com
-                        <br />
-                        jobs@webexample.com
+                        +0123-456789 <br />
+                        +987-6543210
                         </Card.Text>
                         <button className='main-button'>Email Now</button>
                     </Card.Body>
@@ -47,11 +46,11 @@ const ContactUs = () => {
                     
 
                     <Card.Body className='mt-3 text-center'>
-                        <Card.Title>Email Address</Card.Title>
+                        <Card.Title>Office Address</Card.Title>
                         <Card.Text>
-                        info@webmail.com
-                        <br />
-                        jobs@webexample.com
+                        18/A, New Born Town Hall <br />
+                        New York, US
+                       
                         </Card.Text>
                         <button className='main-button'>Email Now</button>
                     </Card.Body>
