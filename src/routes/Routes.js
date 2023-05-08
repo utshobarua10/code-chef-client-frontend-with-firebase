@@ -18,9 +18,10 @@ const router = createBrowserRouter([
         element: <Shared></Shared>,
         children:[{
             path: "/",
-            element: <Home></Home>
+            element: <Home></Home>,
+            loader: ()=>fetch('http://localhost:5000/')
         },
-        {
+        {   
             path: '/contact',
             element: <ContactUs></ContactUs>
         },
@@ -33,8 +34,9 @@ const router = createBrowserRouter([
             element: <Signup></Signup>
         },
         {
-            path: '/chefRecipe',
-            element: <ChefRecipe></ChefRecipe>
+            path: '/chefRecipe/:id',
+            element: <ChefRecipe></ChefRecipe>,
+            loader: ({params})=>fetch(`http://localhost:5000/chefRecipe/${params.id}`)
         },
         {
             path: '/blog',

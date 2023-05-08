@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import NavbarLinks from '../Navbar/NavbarLinks';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './SignIn.css'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Context/Context';
 
 const SignIn = () => {
+    const data = useContext(AuthContext);
+    console.log(data)
+
     return (
         <div className='mt-5'>
             <Container style={{marginTop:'150px', marginBottom:'150px'}}>
