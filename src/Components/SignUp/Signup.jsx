@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container, Form } from 'react-bootstrap';
 import { FcGoogle } from 'react-icons/fc';
 import {BsGithub}   from 'react-icons/bs';
@@ -6,19 +6,56 @@ import {MdAccountCircle}   from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/Context';
 const Signup = () => {
-    const {createUser} = useContext(AuthContext);
-   
+    const {createUser,signInWithGoogle,userUpdateProfile} = useContext(AuthContext && AuthContext);
+    const [error,setError] = useState('');
+    const [success, setSuccess] = useState('');
     const handleSubmit =(e)=>{
+       
+            setError('')
+            setSuccess('');
+        
             e.preventDefault();
             const name = e.target.name.value;
             const email = e.target.email.value;
             const url = e.target.url.value;
             const password = e.target.password.value;
-            
+            const confrimPassword = e.target.confirmPassword.value;
+
+            if(password != confrimPassword){
+                setError("Password Didn't match");
+              
+                return
+            }
+
+            if(password.length<6){
+                setError("Password Must Have At Least 6 Charachter");
+                return
+            }
+
+
             createUser(email,password)
+
+            .then(result=>{
+                userUpdateProfile(result.user,name,url)
+                return setSuccess('User Created Sucessfully')
+            })
+            .catch(err => {
+            setError(err.message)
+            return;
+        });
             
+       
             
     }
+
+    const handleGoogleSignIn =()=>{
+        console.log('sign in clicked')
+        signInWithGoogle()
+      
+        
+        
+    }
+
 
 
     return (
@@ -51,16 +88,18 @@ const Signup = () => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Confrimn Password</Form.Label>
-                        <Form.Control type="password" name='confirmPassword' name='confirm-password' placeholder="Confirm Password" />
+                        <Form.Control type="password" name='confirmPassword'  placeholder="Confirm Password" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Accept Terms & Conditions" />
                     </Form.Group>
                     <button className='main-button w-100' type='submit'> Create Account </button>
+                    <p className='text-danger mt-3'>{error}</p>
+                    <p className='text-success mt-3'>{success}</p>
                 </Form>
 
                 <div className="d-flex justify-content-between w-50 mb-5 mt-3" style={{marginLeft: '276px'}}>
-                <button className='border p-2 rounded'> <FcGoogle/> Sign In With Google </button>
+                <button className='border p-2 rounded' onClick={handleGoogleSignIn}> <FcGoogle/> Sign In With Google </button>
                 <Link to='/signin'>  <button className='border p-2 rounded'> <MdAccountCircle/> Have An Account? </button> </Link>
                <button className='border p-2 rounded'> <BsGithub/> Sign In With Github </button>
                 

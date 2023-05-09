@@ -4,12 +4,26 @@ import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './SignIn.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/Context';
 
 const SignIn = () => {
-    const data = useContext(AuthContext);
-    console.log(data)
+    const {signInUser,user} = useContext(AuthContext && AuthContext);
+    const location = useLocation();
+    const navigation = useNavigate();
+   
+    const from = location?.state?.from.pathname || '/'
+    console.log(from);
+    
+
+    const handleSubmit =(e)=>{
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        signInUser(email,password)
+        navigation(from,{replace:true})
+        console.log(user.photoURL)
+    }
 
     return (
         <div className='mt-5'>
@@ -18,21 +32,21 @@ const SignIn = () => {
                     <h3 style={{fontWeight: 'bold'}} >Sign In <br /> to Your Account</h3>
                 </div>
                 <div className="d-flex">
-                    <Form className='w-50 mx-auto'>
+                    <Form className='w-50 mx-auto' onSubmit={handleSubmit}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
 
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control type="email" name='email' placeholder="Enter email" />
 
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
+                            <Form.Control type="password" name="password" placeholder="Password" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Accept Terms & Conditions" />
                         </Form.Group>
-                        <button className='main-button w-100'> Sign In</button>
+                        <button className='main-button w-100' type='submit'> Sign In</button>
                     </Form>
 
 

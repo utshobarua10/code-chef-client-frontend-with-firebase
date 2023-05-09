@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import './Navbar.css'
@@ -8,9 +8,17 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Carousel, Container } from 'react-bootstrap';
 import logo from '../../Images/logo.png'
 import SignIn from '../SignInPage/SignIn';
+import { AuthContext } from '../Context/Context';
 
 
 const NavbarLinks = () => {
+  const {user, logOut} = useContext(AuthContext);
+  const handleSignOUt =()=>{
+      logOut();
+  }
+  
+  
+
 
     return (
         <div >
@@ -28,6 +36,14 @@ const NavbarLinks = () => {
             <Nav.Link href="#link" className='text-white'><Link to='/signin'>Sign In </Link></Nav.Link>
             <Nav.Link href="#link" className='text-white'><Link to='/signup'>Create Account </Link></Nav.Link>
             <Nav.Link href="#link" className='text-white'><Link to='/contact'>Contact Us </Link></Nav.Link>
+            {
+              user? <img src={user.photoURL} style={{width:'40px', borderRadius:'50%'}}/> : ''
+              
+            }
+            {
+              user &&   <button className='main-button' onClick={handleSignOUt} style={{marginLeft:'30px'}}>Sign Out</button>
+            }
+          
           </Nav>
         </Navbar.Collapse>
       </Container>

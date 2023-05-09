@@ -8,6 +8,7 @@ import ContactUs from "../Components/ContactUs/ContactUs";
 import Shared from "../Components/Shared/Shared";
 import ChefRecipe from "../Components/ChefRecipe/ChefRecipe";
 import Blog from "../Components/Blog/Blog";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 
 
 
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/chefRecipe/:id',
-            element: <ChefRecipe></ChefRecipe>,
+            element: <PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
             loader: ({params})=>fetch(`http://localhost:5000/chefRecipe/${params.id}`)
         },
         {
