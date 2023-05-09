@@ -68,6 +68,7 @@ const SingleRecipe = (props) => {
                                         placeholderSymbol={<AiFillStar></AiFillStar>}
                                         fullSymbol={<AiFillStar></AiFillStar>}
                                     />
+                                    
                                     <ToastContainer /> </button>
                             </div>
                         </Card.Subtitle>
