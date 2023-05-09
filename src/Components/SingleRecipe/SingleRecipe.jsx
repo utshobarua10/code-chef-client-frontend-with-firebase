@@ -29,11 +29,7 @@ const SingleRecipe = (props) => {
     return (
         <div>
             <Container>
-
-
-
-
-                <Card style={{ width: '40rem' }} className='mx-auto p-3'>
+                <Card style={{ width: '40rem' }} className='mx-auto p-3 mt-3'>
                     <Card.Body className='d-flex justify-content-between align-items-center p-5'>
 
 
@@ -54,7 +50,7 @@ const SingleRecipe = (props) => {
 
 
                         <Card.Img src={food} className='w-25'></Card.Img>
-                        <Card.Subtitle className='mx-5 w-75'>
+                        <Card.Subtitle className='mx-5 w-100'>
                             <Card.Title ><span className='fs-2'>{curry}</span> <br /> </Card.Title>
                             <p className='text-secondary'>{bio}</p>
                             <div className='d-flex justify-content-evenly'>

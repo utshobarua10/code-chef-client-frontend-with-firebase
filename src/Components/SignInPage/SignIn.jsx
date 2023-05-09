@@ -26,7 +26,7 @@ const SignIn = () => {
         .catch(err => console.log(err))
         
         
-        console.log(user.photoURL)
+       
     }
 
     return (

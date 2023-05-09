@@ -6,7 +6,7 @@ import {MdAccountCircle}   from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/Context';
 const Signup = () => {
-    const {createUser,signInWithGoogle,userUpdateProfile} = useContext(AuthContext && AuthContext);
+    const {createUser,signInWithGoogle,userUpdateProfile,createUserWithGitHub} = useContext(AuthContext && AuthContext);
     const [error,setError] = useState('');
     const [success, setSuccess] = useState('');
     const handleSubmit =(e)=>{
@@ -56,6 +56,13 @@ const Signup = () => {
         
     }
 
+    const handleGitHub =()=>{
+        createUserWithGitHub()
+        .then(res => console.log(res))
+        .then(err => console.log(err))
+        
+    }
+
 
 
     return (
@@ -101,7 +108,7 @@ const Signup = () => {
                 <div className="d-flex justify-content-between w-50 mb-5 mt-3" style={{marginLeft: '276px'}}>
                 <button className='border p-2 rounded' onClick={handleGoogleSignIn}> <FcGoogle/> Sign In With Google </button>
                 <Link to='/signin'>  <button className='border p-2 rounded'> <MdAccountCircle/> Have An Account? </button> </Link>
-               <button className='border p-2 rounded'> <BsGithub/> Sign In With Github </button>
+               <button className='border p-2 rounded' onClick={handleGitHub}> <BsGithub/> Sign In With Github </button>
                 
 
 

@@ -24,20 +24,20 @@ const NavbarLinks = () => {
         <div >
           <Navbar bg="dark"  expand="lg" className='fixed-top'>
       <Container>
-      <Navbar.Brand href="#home" className='text-white fw-bold mx-auto'>  <img src={logo} style={{height:'40px'}} alt=""/> Hunger Time</Navbar.Brand>
+      <Navbar.Brand className='text-white fw-bold mx-auto'> <Link to='/' className='text-white mr-3'><img src={logo} style={{height:'40px'}} alt=""/> Hunger Time</Link> </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
        
           <Nav className="mx-auto">
           
-            <Nav.Link href="#home" className='text-white'><Link to='/'>Home</Link></Nav.Link>
-            <Nav.Link href="#link" className='text-white'><Link to='/blog'>Blog</Link></Nav.Link>
-            <Nav.Link href="#link" className='text-white'><Link to='/signin'>Sign In </Link></Nav.Link>
-            <Nav.Link href="#link" className='text-white'><Link to='/signup'>Create Account </Link></Nav.Link>
-            <Nav.Link href="#link" className='text-white'><Link to='/contact'>Contact Us </Link></Nav.Link>
+            <Nav.Link  className='text-white'><Link to='/'>Home</Link></Nav.Link>
+            <Nav.Link  className='text-white'><Link to='/blog'>Blog</Link></Nav.Link>
+            <Nav.Link  className='text-white'><Link to='/signin'>Sign In </Link></Nav.Link>
+            <Nav.Link  className='text-white'><Link to='/signup'>Create Account </Link></Nav.Link>
+            <Nav.Link  className='text-white'><Link to='/contact'>Contact Us </Link></Nav.Link>
             {
-              user? <img src={user.photoURL} style={{width:'40px', borderRadius:'50%'}}/> : ''
+              user? <img src={user.photoURL} style={{width:'60px', borderRadius:'50%'}}/> : ''
               
             }
             {
