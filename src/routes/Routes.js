@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         children:[{
             path: "/",
             element: <Home></Home>,
-            loader: ()=>fetch('http://localhost:5000/')
+            loader: ()=>fetch('https://code-chef-server-aoyon887-gmailcom.vercel.app/')
         },
         {   
             path: '/contact',
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         {
             path: '/chefRecipe/:id',
             element: <PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
-            loader: ({params})=>fetch(`http://localhost:5000/chefRecipe/${params.id}`)
+            loader: ({params})=>fetch(`https://code-chef-server-aoyon887-gmailcom.vercel.app/chefRecipe/${params.id}`)
         },
         {
             path: '/blog',
