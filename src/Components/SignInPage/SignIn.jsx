@@ -12,16 +12,20 @@ const SignIn = () => {
     const location = useLocation();
     const navigation = useNavigate();
    
-    const from = location?.state?.from.pathname || '/'
-    console.log(from);
-    
+    const from = location.state?.from.pathname || '/'
+    // console.log(from);
+    console.log(location)
+
 
     const handleSubmit =(e)=>{
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         signInUser(email,password)
-        navigation(from,{replace:true})
+        .then(result=> navigation(from,{replace:true}))
+        .catch(err => console.log(err))
+        
+        
         console.log(user.photoURL)
     }
 
